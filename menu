@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paintra - Restaurant Menu</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #fff7f0, #ffe6cc);
+    color: #333;
+  }
+
+  header {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #ff7a18, #ff6600);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: bold;
+  }
+
+  header p {
+    margin-top: 5px;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  .menu-section {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+
+  h2 {
+    color: #ff6600;
+    border-bottom: 2px solid #ff6600;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .menu-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+  }
+
+  .menu-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .menu-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .menu-content {
+    padding: 15px;
+  }
+
+  .menu-content h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .price {
+    color: #ff6600;
+    font-weight: bold;
+    margin: 8px 0;
+  }
+
+  .desc {
+    font-size: 14px;
+    color: #666;
+  }
+
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 26px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Paintra 🍽️</h1>
+  <p>Deliciously Yours – Fresh, Tasty & Made with Love</p>
+</header>
+
+<div class="menu-section">
+  <h2>Starters</h2>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="https://www.jessicagavin.com/wp-content/uploads/2020/07/bruschetta-17-1200.jpg" alt="Bruschetta">
+      <div class="menu-content">
+        <h3>Bruschetta</h3>
+        <div class="price">₹180</div>
+        <div class="desc">Grilled bread topped with fresh tomatoes, basil & olive oil.</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.KUGmFTZprLWgPDdf1QxUxAHaHa?pid=Api&P=0&h=180" alt="Spring Rolls">
+      <div class="menu-content">
+        <h3>Spring Rolls</h3>
+        <div class="price">₹150</div>
+        <div class="desc">Crispy rolls stuffed with veggies & served with sweet chili sauce.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="menu-section">
+  <h2>Main Course</h2>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?w=800" alt="Pasta Alfredo">
+      <div class="menu-content">
+        <h3>Pasta Alfredo</h3>
+        <div class="price">₹350</div>
+        <div class="desc">Creamy Alfredo pasta tossed with parmesan cheese & herbs.</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2020/01/paneer-butter-masala-1.jpg" alt="Paneer Butter Masala">
+      <div class="menu-content">
+        <h3>Paneer Butter Masala</h3>
+        <div class="price">₹280</div>
+        <div class="desc">Soft paneer cubes in a rich tomato butter gravy.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="menu-section">
+  <h2>Desserts</h2>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="https://sp.yimg.com/ib/th?id=OPAC.e85q6OL0Lskeow474C474&o=5&pid=21.1&w=174&h=174" alt="Chocolate Cake">
+      <div class="menu-content">
+        <h3>Chocolate Cake</h3>
+        <div class="price">₹200</div>
+        <div class="desc">Rich chocolate sponge topped with dark chocolate ganache.</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://sp.yimg.com/ib/th?id=OPAC.EalTVnEI%2bZxUKw474C474&o=5&pid=21.1&w=174&h=174" alt="Cheesecake">
+      <div class="menu-content">
+        <h3>Cheesecake</h3>
+        <div class="price">₹220</div>
+        <div class="desc">Creamy cheesecake with a buttery biscuit base.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
