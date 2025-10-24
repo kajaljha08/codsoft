@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodSoft - Mobile App Signup Flow</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #fff3e6, #ffd1a3, #ff944d); /* Soft premium gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .app-container {
+    background: white;
+    width: 350px;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  h2 {
+    text-align: center;
+    color: #ff6600;
+    margin-bottom: 10px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s ease;
+  }
+
+  input:focus {
+    border-color: #ff6600;
+    box-shadow: 0 0 5px rgba(255,102,0,0.5);
+  }
+
+  button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #ff7a18, #ff6600);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  button:hover {
+    background: linear-gradient(135deg, #e65500, #ff7a33);
+  }
+
+  .step {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  .step.active {
+    display: block;
+  }
+
+  .success {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .success h3 {
+    color: #28a745;
+    margin-bottom: 10px;
+  }
+
+  /* Progress Indicator */
+  .progress {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .circle {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background 0.3s;
+  }
+
+  .circle.active {
+    background: #ff6600;
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="app-container">
+  
+  <!-- Step 1: Welcome -->
+  <div class="step active" id="step1">
+    <div class="progress">
+      <div class="circle active"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <h2>Welcome to CodSoft 🚀</h2>
+    <p>Create your account in just a few steps</p>
+    <button onclick="nextStep(2)">Get Started</button>
+  </div>
+
+  <!-- Step 2: Sign Up Form -->
+  <div class="step" id="step2">
+    <div class="progress">
+      <div class="circle"></div>
+      <div class="circle active"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <h2>Sign Up</h2>
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+    <input type="password" placeholder="Password" required>
+    <button onclick="nextStep(3)">Continue</button>
+  </div>
+
+  <!-- Step 3: OTP Verification -->
+  <div class="step" id="step3">
+    <div class="progress">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle active"></div>
+      <div class="circle"></div>
+    </div>
+    <h2>Verify OTP</h2>
+    <input type="text" placeholder="Enter OTP" required>
+    <button onclick="nextStep(4)">Verify</button>
+  </div>
+
+  <!-- Step 4: Success -->
+  <div class="step" id="step4">
+    <div class="progress">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle active"></div>
+    </div>
+    <div class="success">
+      <h3>✅ Signup Successful!</h3>
+      <p>Welcome aboard, Kajal! Your CodSoft account is ready.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function nextStep(step) {
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    document.getElementById(`step${step}`).classList.add('active');
+
+    // Update progress circles
+    document.querySelectorAll(`#step${step} .progress .circle`).forEach((circle, idx) => {
+      if (idx < step) {
+        circle.classList.add('active');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
